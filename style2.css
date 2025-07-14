@@ -4,7 +4,7 @@ body {
   padding: 0;
   font-family: 'Arial', sans-serif;
   min-height: 100vh;
-  background-image: url('../images/d.jpg');
+  background-image: url('https://files.catbox.moe/ikekle.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
