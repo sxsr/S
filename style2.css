@@ -1,0 +1,229 @@
+/* الخلفية والهيكل حق الموقع هههههههههخخ مدري قاعد اهبد*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background-image: url('/d.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* تغليف الصفحة بالكااامل*/
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* المحتوى */
+.content {
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.title {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0 0 40px 0;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+/* البطاقات */
+.achievement-card {
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.card-image {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #444;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-description {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.card-description p {
+  color: #eee;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+.card-footer {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #666;
+  margin-top: auto;
+}
+
+.details-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #4a6fa5;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  min-width: 150px;
+}
+
+.details-btn:hover {
+  background-color: #3a5a8a;
+  transform: scale(1.05);
+}
+
+/*  الفوتر ياو ياو */
+.page-footer {
+  background: rgba(20, 20, 20, 0.85);
+  color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.footer-left {
+  font-size: 0.8rem;
+}
+
+.back-button {
+  background-color: #4a6fa5;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #3a5a8a;
+}
+
+/* التجاوب */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-image img {
+    max-height: 350px;
+  }
+
+  .footer-left {
+    font-size: 0.75rem;
+  }
+
+  .back-button {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .card-description p {
+    font-size: 1rem;
+  }
+
+  .details-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+
+  .card-image img {
+    max-height: 300px;
+  }
+
+  .footer-left {
+    font-size: 0.7rem;
+  }
+
+  .back-button {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+}
+
+
+
+/* ىقىى بهىقفﻻعفىرىه راجحي
+ههههههههههه طفش وش اسوي*/
+#settings{
+    top: 0;
+    padding: var(--padding);
+    background: var(--bgColor-2);
+    border-radius: 20px;
+    border: var(--lightColor) 1px solid;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    transition: all 1s;
+}

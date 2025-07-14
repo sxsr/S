@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>- ارثر -</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Hamad G.html" />
+  <meta name="description" content="- Arthur - Offical Website">
+  <title>- Arthur -</title>
+  <meta name="keywords" content="- ارثر -">
+  <link rel="icon" href="/main.png">
+  
+</head>
+<body>
+
+  
+  <button id="langBtn" class="lang-toggle">EN</button>
+
+ 
+  <div class="background"></div>
+
+  
+  <div class="glow-image-container">
+    <img src="/profile.png" alt="صورة شخصية" class="glow-image" />
+  </div>
+
+  
+  <div class="social-icons">
+    <a href="https://www.instagram.com/v9l9x?igsh=MXY1OGZ5eDFrcWFzaA==" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="/instagram-icon.png" alt="Instagram" />
+    </a>
+  <!--<a href="https://discord.com" target="_blank" rel="noopener" aria-label="Discord"> 
+      <img src="discord-icon.png" alt="Discord" />
+    </a> !-->
+    <a href="https://t.me/CV966" target="_blank" rel="noopener" aria-label="Telegram">
+      <img src="/telegram-icon.png" alt="Telegram" />
+    </a>
+  </div>
+
+  
+  <section class="intro-text" id="text">
+    <h1 id="greeting">حياك الله !</h1>
+    <p id="desc">أنا ارثر أو حمد العمر ١٨ سنه خريج ثانوي عقبها مالحق وتيسر لي في هذي الدنيا دايما اتشرنق حول اهتمامتي هواجيسي واجده ومرهقه بس علومي طيبه بنيت الموقع ذا على
+طاري الملل وقله السوالف يالي تقرأ لبى عينك هات خشمك احبه  
+لو مهتم اضغط على زر مشاريعي تحت تراني مبرمج قادح وثقه
+    </p>
+   
+    <button class="projects-btn" onclick="location.href='Hamad G.html'" id="workBtn">مشاريعي </button>
+
+    
+    <div class="spacer"></div>
+
+   
+    <p class="music-note" id="musicText">لو تبغا بعد اسمع ذوقي بالموسيقى لأن دايما يقولون الموسيقى لغه العالم يمكن تفهمني من ذوقي </p>
+
+   
+    <div class="spotify-card">
+      <div class="spotify-header">
+        <img src="/spotify-logo.png" alt="Spotify" />
+        <span id="spotifyTitle">سبوتيفاي</span>
+      </div>
+      <p id="song-title">🎵 الأغنية الحالية</p>
+      <div class="controls">
+        <button id="playPause">▶️</button>
+        <button id="nextSong">⏭️</button>
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer>
+    <p id="copyright">جميع الحقوق محفوظة © 2025</p>
+  </footer>
+
+  <script>
+ 
+    const img = document.querySelector('.glow-image');
+    setInterval(() => {
+      img.classList.toggle('pulse');
+    }, 2000);
+
+    
+    const langBtn = document.getElementById('langBtn');
+    const textElements = {
+      ar: {
+        greeting: 'حياك الله !',
+        desc: 'أنا ارثر أو حمد العمر ١٨ سنه خريج ثانوي عقبها مالحق وتيسر لي في هذي الدنيا دايما اتشرنق حول اهتمامتي هواجيسي واجده ومرهقه بس علومي طيبه بنيت الموقع ذا على طاري الملل وقله السوالف حطيت لك تحت زر مشاريعي لو مهتم تشيك تراني مبرمج قادح وثقه',
+        workBtn: 'مشاريعي',
+        musicText: 'لو تبغا بعد اسمع ذوقي بالموسيقى لأن دايما يقولون الموسيقى لغه العالم يمكن تفهمني من ذوقي',
+        spotifyTitle: ' سبوتيفاي',
+        currentSong: '🎵 الأغنية الحالية',
+        copyright: 'جميع الحقوق محفوظة © 2025',
+        dir: 'rtl',
+        lang: 'ar',
+        langSwitch: 'EN'
+      },
+      en: {
+        greeting: 'Hi there !',
+        desc: 'I am Arthur or Hamad, 18 years old, a high school graduate. I am always busy with my interests. My thoughts are many and exhausting, but I am in good health. I built this site on the basis of boredom and helplessness. If you are interested in my projects, click the button below.',
+        workBtn: 'projects',
+        musicText: 'Want to hear my taste in music?🎧',
+        spotifyTitle: 'Spotify',
+        currentSong: '🎵 Now Playing',
+        copyright: 'All rights reserved © 2025',
+        dir: 'ltr',
+        lang: 'en',
+        langSwitch: 'AR'
+      }
+    };
+
+    let currentLang = 'ar';
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      const content = textElements[currentLang];
+      document.documentElement.lang = content.lang;
+      document.documentElement.dir = content.dir;
+      document.getElementById('greeting').textContent = content.greeting;
+      document.getElementById('desc').textContent = content.desc;
+      document.getElementById('workBtn').textContent = content.workBtn;
+      document.getElementById('musicText').textContent = content.musicText;
+      document.getElementById('spotifyTitle').textContent = content.spotifyTitle;
+      document.getElementById('song-title').textContent = content.currentSong;
+      document.getElementById('copyright').textContent = content.copyright;
+      langBtn.textContent = content.langSwitch;
+    });
+
+    
+    const songs = [
+      { title: "ليتني امسك صوتك بكفي وأحبه  ", src: "https://files.catbox.moe/ft6m4h.m4a" },
+      { title: "هات من عذاب السوالف ماتهيا", src: "https://files.catbox.moe/vp5kf9.m4a" },
+      { title: " حبني لحالي احبك لحالك , راعي احاسيسي تراني احب التملك ! ", src: "https://files.catbox.moe/ffnezv.m4a" }
+    ];
+
+    let currentSongIndex = 0;
+    const audio = new Audio(songs[currentSongIndex].src);
+    const playPauseBtn = document.getElementById('playPause');
+    const nextBtn = document.getElementById('nextSong');
+    const songTitle = document.getElementById('song-title');
+    let isPlaying = false;
+
+    songTitle.textContent = "🎵 " + songs[currentSongIndex].title;
+
+    playPauseBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        playPauseBtn.textContent = "▶️";
+      } else {
+        audio.play();
+        playPauseBtn.textContent = "⏸️";
+      }
+      isPlaying = !isPlaying;
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      audio.src = songs[currentSongIndex].src;
+      songTitle.textContent = "🎵 " + songs[currentSongIndex].title;
+      if (isPlaying) audio.play();
+    });
+  </script>
+</body>
+</html>

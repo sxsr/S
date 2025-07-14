@@ -1,0 +1,243 @@
+/* خلفية الموقع وحجم الصوره عدل براحتك */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Cairo', sans-serif;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: #000;
+  position: relative;
+  min-height: 100vh;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* هنا الصوره الدايريه المتوهجه */
+.glow-image-container {
+  margin-top: 80px;
+  animation: float 4s ease-in-out infinite;
+}
+.glow-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3),
+              0 0 35px rgba(0, 0, 0, 0.3);
+  animation: pulseGlow 2.5s ease-in-out infinite, float 4s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3),
+                0 0 35px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4),
+                0 0 55px rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* هنا النص الكبير */
+.intro-text {
+  margin-top: 30px;
+  padding: 20px;
+}
+.intro-text h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #000000, #ffffff, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro-text p {
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin: auto;
+  color: #ddd;
+}
+
+/* زر مشاريعي */
+.projects-btn {
+  margin-top: 25px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+.projects-btn:hover {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* زر تغيير اللغة */
+.lang-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  box-shadow: 0 0 6px rgba(255,255,255,0.15);
+}
+
+/*  مسافه بين الزر والي تحته  */
+.spacer {
+  height: 60px;
+}
+
+/* جملة الموسيقى */
+.music-note {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #eee;
+}
+
+
+/* بطاقة سبوتيفاي - تقدر تزرف من الأكواد الي فوق وتضيف وميض وكذا  */
+.spotify-card {
+  margin: auto;
+  margin-top: 10px;
+  padding: 20px;
+  max-width: 320px;
+  background: transparent;
+  border-radius: 18px;
+  box-shadow: none;
+  color: white;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+/* صورة الخلفية حطيتها انا شفافه لجل تكون مثل الزجاج تتماشى مع الموقع */
+.spotify-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("/s.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  filter: brightness(0.7);
+  z-index: 0;
+}
+
+/* المحتوى فوق الصوره */
+.spotify-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ترويسه سبوتيفاي */
+.spotify-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* خلي المحتوى في الزاوية اليسرى */
+  margin-bottom: 10px;
+}
+
+/* صوره سبوتيفاي */
+.spotify-header img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+/* نص سبوتيفاي */
+.spotify-header span {
+  font-weight: bold;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+  margin-left: 8px;
+}
+
+/* عنوان الأغنسه */
+.spotify-card #song-title {
+  margin: 12px 0;
+  font-size: 1rem;
+}
+
+/* أزرار التحككم */
+.spotify-card .controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.spotify-card .controls button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.spotify-card .controls button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* الفوتر الي هوه الكلام الي تحت حق الحقوق محفوظه*/
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  margin: 15px auto 25px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255 255 255 / 0.1);
+  padding: 10px 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(255 255 255 / 0.1);
+  width: fit-content;
+}
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
