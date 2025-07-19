@@ -62,7 +62,7 @@ body {
 .intro-text h1 {
   font-size: 3rem;
   margin-bottom: 15px;
-  background: linear-gradient(90deg, #000000, #ffffff, #ffff00);
+  background: linear-gradient(90deg, #470b0b, #540c0c, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
